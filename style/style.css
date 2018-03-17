@@ -1,5 +1,5 @@
 /* style reset */
-body, p, a, li, ul, ol {
+* {
   margin: 0;
   padding: 0;
 }
@@ -10,14 +10,13 @@ a {
   text-decoration: none;
 }
 body {
-  background: #000;
-  color: #aaa;
+  background: #efefef;
+  color: #000;
 }
 
 /* topNavBar style */
 .topNavBar {
   padding: 20px 16px;
-  background: #000;
 }
 
 .topNavBar .logo {
@@ -61,14 +60,92 @@ body {
 }
 
 .banner {
-  height: 500px;
+  top: 0;
+  left: 0;
+  position: relative;;
+  height: 515px;
   margin-top: -80px;
-  background: url(../img/rs-cover.jpg) no-repeat;
-  background-size: cover;
+  width: 100%;
+  background: url(../img/rs-cover.jpg) no-repeat center;
+  z-index: -1;
 }
+
+.banner:before{
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(44, 51, 64, 0.8);
+} 
 /* main style */
 
+.profile {
+  max-width: 930px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid red;
+  background: #fff;
+}
 
+.profile .detail {
+  padding: 57px 50px 15px;
+}
+
+.profile .detail .picture {
+  float: left;
+  margin-right: 63px;
+}
+
+.profile .detail .text {
+  float: left;
+  width: 468px;
+}
+
+.profile .detail .welcome{
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  padding: 5px 13px;
+  background: #e8676b;
+}
+
+.profile .detail .welcome .tri {
+  display: inline-block;
+  position: absolute;
+  left: 4px;
+  top: 100%;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #e8676b;
+}
+
+.profile .detail .text hr {
+  margin: 28px 0;
+  border: none;
+  border-top: 1px solid rgb(222,222,222)
+}
+
+.profile .detail .text dt,
+.profile .detail .text dd {
+  float: left;
+}
+
+.profile .detail .text dt{
+  width: 30%;
+  font-size: 12px;
+  padding-bottom: 17px;
+}
+
+.profile .detail .text dd {
+  width: 70%;
+  color: #9da0a7;
+  font-size: 12px;
+  padding-bottom: 17px;
+}
 /* clearfix */
 .clearfix:after {
   content: '';
