@@ -78,7 +78,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: rgba(44, 51, 64, 0.8);
+  background: rgba(44, 51, 64, 0.6);
 } 
 /* main style */
 
@@ -90,6 +90,7 @@ main {
   margin-left: auto;
   margin-right: auto;
   background: #fff;
+  box-shadow: 2px 2px 5px 0 rgba(0,0,0,.3);
 }
 
 .profile .detail {
@@ -148,14 +149,16 @@ main {
 
 .profile .detail .text dt{
   width: 30%;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 700;
   padding-bottom: 17px;
 }
 
 .profile .detail .text dd {
   width: 70%;
   color: #9da0a7;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 700;
   padding-bottom: 17px;
 }
 
@@ -194,6 +197,35 @@ footer .icon {
    vertical-align: top;
    fill: #FFF;
  }
+
+ main .download {
+  margin-top: 26px;
+  text-align: center;
+ }
+
+ main .download a {
+   font-size: 14px;
+   font-weight: 700;
+   color: #000;
+   padding: 18px 36px;
+   display: inline-block;
+   border: 1px solid rgba(203,205,207);
+   border-radius: 3px;
+   transition: all .5s;
+ }
+
+ main .download a:hover {
+  box-shadow: 3px 3px 10px 2px #ccc;
+}
+
+main .description {
+  max-width: 930px;
+  margin: 40px auto;
+  font-size: 18px;
+  font-family: kai;
+  line-height: 1.8;
+  text-align: center;
+}
 
 /* clearfix */
 .clearfix:after {
