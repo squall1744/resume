@@ -128,17 +128,34 @@
     <h2>作品集</h2>
     <nav>
       <ol class="clearfix">
-        <li>所有</li>
-        <li>框架</li>
-        <li>原生JS</li>
+        <li id="all">所有</li>
+        <li id="frame">框架</li>
+        <li id="javascript">原生JS</li>
       </ol>
-      <div class="progressBar"></div>
+      <div class="progressBar"><div id="bar" class="progress"></div></div>
     </nav>
     <div class="works">
-      <div class="big"></div>
-      <div class="small"></div>
-      <div class="small"></div>
+      <div class="big">
+        <img src="./img/photo-1.jpg" alt="">
+      </div>
+      <div class="small-1">
+        <img src="./img/photo-2.jpg" alt="">
+      </div>
+      <div class="small-2">
+        <img src="./img/photo-3.jpg" alt="">
+      </div>
     </div>
   </section>
+  <script>
+    all.onclick = function() {
+      bar.className = 'progress'
+    }
+    frame.onclick = function() {
+      bar.className = 'progress status-2'
+    }
+    javascript.onclick = function() {
+      bar.className = 'progress status-3'
+    }
+  </script>
 </body>
 </html>
