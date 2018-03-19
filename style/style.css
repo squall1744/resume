@@ -149,17 +149,17 @@ main {
 
 .profile .detail .text dt{
   width: 30%;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
-  padding-bottom: 17px;
+  padding-bottom: 16px;
 }
 
 .profile .detail .text dd {
   width: 70%;
   color: #9da0a7;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
-  padding-bottom: 17px;
+  padding-bottom: 16px;
 }
 
 
@@ -199,7 +199,7 @@ footer .icon {
  }
 
  main .download {
-  margin-top: 26px;
+  margin-top: 33px;
   text-align: center;
  }
 
@@ -220,11 +220,124 @@ footer .icon {
 
 main .description {
   max-width: 930px;
-  margin: 40px auto;
+  margin: 38px auto;
   font-size: 18px;
   font-family: kai;
   line-height: 1.8;
   text-align: center;
+}
+
+
+/* skill layout */
+.skills {
+  max-width: 930px;
+  margin: 57px auto;
+}
+
+.skills h2 {
+  text-align: center;
+  margin-bottom: 27px;
+}
+
+.skills .content {
+  background: #fff;
+  padding: 43px 20px 18px 50px;
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,.2);
+}
+
+.skills .content li {
+  float: left;
+  width: 50%;
+  padding-bottom: 32px;
+}
+
+.skills .content li h3 {
+  font-size: 14px;
+  color: #3d4451;
+  padding-bottom: 5px;
+}
+
+.skills .content .progressBar {
+  height: 5px;
+  background: rgb(232,103,107,.2);
+  margin-right: 30px;
+}
+
+.skills .content .progressBar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 70%;
+  background:rgb(232,103,107);
+}
+
+
+.skills .content li:nth-child(2) .progressBar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 95%;
+  background:rgb(232,103,107);
+}
+ 
+.skills .content li:nth-child(3) .progressBar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 80%;
+  background:rgb(232,103,107);
+}
+
+.skills .content li:nth-child(4) .progressBar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 94%;
+  background:rgb(232,103,107);
+}
+
+.skills .content li:nth-child(5) .progressBar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 85%;
+  background:rgb(232,103,107);
+}
+
+/* album layout */
+.florilegium {
+  max-width: 930px;
+  margin: 57px auto;
+}
+
+.florilegium h2 {
+  text-align: center;
+  margin-bottom: 27px;
+}
+
+.florilegium {
+  text-align: center;
+}
+ 
+.florilegium nav {
+  display: inline-block;
+  border: 1px solid;
+  margin: 0 auto;
+}
+
+.florilegium nav ol li {
+  font-size: 14px;
+  float: left;
+  margin-left: 48px;
+  cursor: pointer;
+}
+.florilegium nav ol li:first-child{
+  margin-left: 0;
+}
+
+.florilegium nav div{
+  height: 5px;
+  background: #fff;
 }
 
 /* clearfix */
@@ -233,3 +346,5 @@ main .description {
   display: block;
   clear: both;
 }
+
+
