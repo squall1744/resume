@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>个人简历</title>
   <link rel="stylesheet" href="./style/style.css">
+  <!-- <link rel="stylesheet" href="./style/loading.css"> -->
   <script src="//at.alicdn.com/t/font_595376_gk3pq8kxmdl8r529.js"></script>
   <style type="text/css">
     .icon {
@@ -12,9 +13,58 @@
        fill: currentColor;
        overflow: hidden;
     }
+    .start {
+      display: none;
+    }
+
+    .start.active {
+     display: block;
+    }
+
+    .loading {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      z-index: 1;
+    }
+
+    .loading::before,
+    .loading::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #000;
+      animation: loading 2s linear infinite;
+    }
+
+    .loading::after {
+      animation-delay: 1s;
+    }
+
+    @keyframes loading {
+      0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+      }
+      100% {
+       width: 100px;
+       height: 100px;
+        opacity: 0;
+      }
+    }
 </style>
 </head>
 <body>
+  <div id="start" class="start active"><div class="loading"></div></div>
   <div class="topNavBar clearfix">
     <div class="logo">
       <span class="RS">RS</span><span class="card">card</span>
@@ -156,6 +206,9 @@
     javascript.onclick = function() {
       bar.className = 'progress status-3'
     }
+  </script>
+  <script>
+    start.classList.remove('active')
   </script>
 </body>
 </html>
