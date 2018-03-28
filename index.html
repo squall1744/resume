@@ -15,18 +15,16 @@
     }
     .start {
       display: none;
+      position: fixed;
+      margin-top: 80px;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      z-index: 99;
     }
 
     .start.active {
      display: block;
-    }
-
-    .loading {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      z-index: 1;
     }
 
     .loading::before,
@@ -65,21 +63,23 @@
 </head>
 <body>
   <div id="start" class="start active"><div class="loading"></div></div>
-  <div class="topNavBar clearfix">
-    <div class="logo">
-      <span class="RS">RS</span><span class="card">card</span>
+  <div id="topNavBar" class="topNavBar">
+    <div class="wrapper clearfix">
+      <div class="logo">
+        <span class="RS">RS</span><span class="card">card</span>
+      </div>
+      <nav>
+        <ul class="clearfix">
+          <li><a href="#">关于</a></li>
+          <li><a href="#">技能</a></li>
+          <li><a href="#">作品</a></li>
+          <li><a href="#">博客</a></li>
+          <li><a href="#">日历</a></li>
+          <li><a href="#">联系方式</a></li>
+          <li><a href="#">其他</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul class="clearfix">
-        <li><a href="#">关于</a></li>
-        <li><a href="#">技能</a></li>
-        <li><a href="#">作品</a></li>
-        <li><a href="#">博客</a></li>
-        <li><a href="#">日历</a></li>
-        <li><a href="#">联系方式</a></li>
-        <li><a href="#">其他</a></li>
-      </ul>
-    </nav>
   </div>
   <div class="banner"></div>
   <main>
@@ -208,7 +208,16 @@
     }
   </script>
   <script>
-    start.classList.remove('active')
+    setTimeout(() => {
+      start.classList.remove('active')
+    }, 3000 )
+    window.onscroll = e => {
+      if(window.scrollY >0) {
+        topNavBar.classList.add('sticky')
+      }else {
+        topNavBar.classList.remove('sticky')
+      }
+    }
   </script>
 </body>
 </html>

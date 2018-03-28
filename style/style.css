@@ -10,42 +10,61 @@ a {
   text-decoration: none;
 }
 body {
+  position: relative;
   background: #efefef;
   color: #000;
 }
 
 /* topNavBar style */
 .topNavBar {
-  padding: 20px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  transition: all 1.5s;
 }
 
-.topNavBar .logo {
+.topNavBar.sticky{
+  padding: 10px 0;
+  background: #efefef;
+  box-shadow: 2px 2px 3px 2px #666;
+  z-index: 1;
+}
+
+
+.topNavBar .wrapper {
+  padding: 0 16px;
+}
+
+.topNavBar .wrapper .logo {
   float: left;
   font-size: 24px;
   font-family: "arial black";
   padding: 3px 0 4px 0;
 }
 
-.topNavBar .logo .RS {
+.topNavBar .wrapper .logo .RS {
   color: #d96e6e;
   margin-right: 5px;
 }
 
-.topNavBar .logo .card {
+.topNavBar .wrapper .logo .card {
   color: #9a9da1;
 }
 
-.topNavBar nav {
+.topNavBar .wrapper nav {
   float: right;
   padding: 4px 0 3px 0;
 }
 
-.topNavBar nav li {
+.topNavBar .wrapper nav li {
   float: left;
   margin: 0 17px;
 }
 
-.topNavBar nav li a {
+
+.topNavBar .wrapper nav li a {
   display: block;
   font-weight: bold;
   padding: 5px 0;
@@ -53,9 +72,14 @@ body {
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   color: rgba(255,255,255,.6);
+  transition: all 1.5s;
 }
 
-.topNavBar nav li a:hover {
+.topNavBar.sticky .wrapper nav li a {
+  color: rgba(0,0,0,.6)
+}
+
+.topNavBar .wrapper nav li a:hover {
   border-bottom: 3px solid #d96e6e;
 }
 
