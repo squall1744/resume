@@ -22,12 +22,12 @@ body {
   left: 0;
   width: 100%;
   padding: 20px 0;
-  transition: all 1.5s;
+  transition: all .5s;
 }
 
 .topNavBar.sticky{
   padding: 10px 0;
-  background: #efefef;
+  background:  #fff;
   box-shadow: 2px 2px 3px 2px #666;
   z-index: 1;
 }
@@ -59,28 +59,84 @@ body {
 }
 
 .topNavBar .wrapper nav li {
+  position: relative;
   float: left;
   margin: 0 17px;
 }
 
-
 .topNavBar .wrapper nav li a {
+  position: relative;
   display: block;
   font-weight: bold;
-  padding: 5px 0;
+  padding: 9px 0;
   font-size: 12px;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
   color: rgba(255,255,255,.6);
-  transition: all 1.5s;
+  transition: all .5s;
 }
 
 .topNavBar.sticky .wrapper nav li a {
   color: rgba(0,0,0,.6)
 }
 
-.topNavBar .wrapper nav li a:hover {
-  border-bottom: 3px solid #d96e6e;
+.topNavBar .wrapper nav li.active a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: #e8676b;
+  animation: slide .5s;
+}
+
+@keyframes slide {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.topNavBar .wrapper nav li ul {
+  display: none;
+}
+
+.topNavBar .wrapper nav li.active ul {
+  display: block;
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 21px;
+  text-align: right;
+  color: rgba(0,0,0,.6);
+  top: 35px;
+  right: 0;
+  white-space: nowrap;
+  background: #fff;
+  box-shadow: 0 0 2px 0 #aaa;
+  animation: menuSlides .5s;
+}
+
+.topNavBar .wrapper nav li ul li {
+  float: right;
+  margin-bottom: 21px;
+  cursor: pointer;
+}
+.topNavBar .wrapper nav li ul li:first-child {
+  margin-top: 21px;
+}
+
+@keyframes menuSlides {
+  0% {
+    margin-right: 100%;
+    opacity: 0;
+  }
+  100% {
+    margin-right: 0;
+    opacity: 1;
+  }
 }
 
 .banner {
