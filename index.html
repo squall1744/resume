@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="./style/style.css">
   <!-- <link rel="stylesheet" href="./style/loading.css"> -->
   <script src="//at.alicdn.com/t/font_595376_gk3pq8kxmdl8r529.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
   <style type="text/css">
     .icon {
        width: 1em; height: 1em;
@@ -18,8 +18,8 @@
       display: none;
       position: fixed;
       margin-top: 80px;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       background: #fff;
       z-index: 99;
     }
@@ -90,7 +90,7 @@
     </div>
   </div>
   <div class="banner"></div>
-  <main id="about">
+  <main mark id="about">
     <div class="profile">
       <div class="detail clearfix">
         <div class="picture">
@@ -153,7 +153,7 @@
     </div>
     <div class="description">邵帅, 机械设计工程师, 资源计划工程师,就职于维美德造纸机械(西安)技术有限公司。资深主机游戏玩家,<br> 喜爱编程, 喜爱各种电子产品, 关注科技前沿, 正在努力转职为web前端开发。</div>
   </main>
-  <section id="skills" class="skills">
+  <section mark id="skills" class="skills">
     <h2>技能</h2>
     <ol class="content clearfix">
       <li>
@@ -182,7 +182,7 @@
       </li>
     </ol>
   </section>
-  <section id="florilegium" class="florilegium">
+  <section mark id="florilegium" class="florilegium">
     <h2>作品集</h2>
     <nav>
       <ol class="clearfix">
@@ -219,12 +219,22 @@
     setTimeout(() => {
       start.classList.remove('active')
     }, 2000)
+
+    let mark = document.querySelectorAll('[mark]')
+    for(let i=0; i<mark.length; i++) {
+      mark[i].classList.add('offset')
+    }
+    let index = 0
+    setTimeout(() => {
+      closest()
+    }, 2500)
     window.onscroll = e => {
       if(window.scrollY >0) {
         topNavBar.classList.add('sticky')
       }else {
         topNavBar.classList.remove('sticky')
       }
+      closest()
     }
 
     let liTags = document.querySelectorAll('.navList>ul>li')
@@ -248,6 +258,7 @@
         let current = window.scrollY
         let top = href.offsetTop - 160
         let time = Math.abs((top - current)/100*300)
+        if(time > 1000){time = 1000}
 
         function animate(time) {
           requestAnimationFrame(animate);
@@ -265,6 +276,22 @@
         })
         .start(); // Start the tween immediately.
       }
+    }
+
+    function closest() {
+      for(let i=1; i<mark.length; i++) {
+        if(Math.abs(mark[i].offsetTop - window.scrollY) < Math.abs(mark[index].offsetTop - window.scrollY)) {
+          index = i
+        }
+      }
+      mark[index].classList.remove('offset')
+
+      let li = document.querySelector(`a[href="#${mark[index].id}"]`).parentNode
+      let brotherLi = li.parentNode.children
+      for(i=0; i<brotherLi.length; i++) {
+        brotherLi[i].classList.remove('highlight')
+      }
+      li.classList.add('highlight')
     }
   </script>
 </body>

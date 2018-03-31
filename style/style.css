@@ -78,6 +78,11 @@ body {
   color: rgba(0,0,0,.6)
 }
 
+.topNavBar.sticky .wrapper nav li.highlight a {
+  color: rgba(233,0,0,.6)
+}
+
+
 .topNavBar .wrapper nav li.active a::after {
   content: '';
   display: block;
@@ -137,6 +142,15 @@ body {
     margin-right: 0;
     opacity: 1;
   }
+}
+
+[mark]{
+  transform: translateY(0);
+  transition: all .5s;
+}
+
+[mark].offset {
+  transform: translateY(100px);
 }
 
 .banner {
@@ -341,6 +355,7 @@ main .description {
   height: 5px;
   background: rgb(232,103,107,.2);
   margin-right: 30px;
+  overflow: hidden;
 }
 
 .skills .content .progressBar::before {
@@ -349,6 +364,17 @@ main .description {
   height: 100%;
   width: 70%;
   background:rgb(232,103,107);
+  transform: translateX(0);
+  transition: all 1s;
+}
+
+.skills.offset .content .progressBar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 70%;
+  background:rgb(232,103,107);
+  transform: translateX(-100%);
 }
 
 
@@ -389,7 +415,6 @@ main .description {
   max-width: 930px;
   margin: 78px auto;
   text-align: center;
-
 }
 
 .florilegium h2 {
@@ -449,6 +474,7 @@ main .description {
 .florilegium .works {
   position: relative;
   box-shadow: 1px 1px 5px 1px rgba(0,0,0,.2); 
+  height: 800px;
 }
 
 .florilegium .works .big{
