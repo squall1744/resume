@@ -23,13 +23,13 @@ body {
   width: 100%;
   padding: 20px 0;
   transition: all .5s;
+  z-index: 1;
 }
 
 .topNavBar.sticky{
   padding: 10px 0;
   background:  #fff;
   box-shadow: 2px 2px 3px 2px #666;
-  z-index: 1;
 }
 
 
