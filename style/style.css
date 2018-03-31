@@ -78,7 +78,7 @@ body {
   color: rgba(0,0,0,.6)
 }
 
-.topNavBar.sticky .wrapper nav li.highlight a {
+.topNavBar .wrapper nav li.highlight a {
   color: rgba(233,0,0,.6)
 }
 

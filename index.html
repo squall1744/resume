@@ -279,8 +279,8 @@
     }
 
     function closest() {
-      for(let i=1; i<mark.length; i++) {
-        if(Math.abs(mark[i].offsetTop - window.scrollY) < Math.abs(mark[index].offsetTop - window.scrollY)) {
+      for(let i=0; i<mark.length; i++) {
+        if(Math.abs(mark[i].offsetTop - window.scrollY) <= Math.abs(mark[index].offsetTop - window.scrollY)) {
           index = i
         }
       }
