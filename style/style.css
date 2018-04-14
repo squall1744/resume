@@ -15,6 +15,60 @@ body {
   color: #000;
 }
 
+
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.start {
+ display: none;
+ position: fixed;
+ margin-top: 80px;
+ width: 100%;
+ height: 100%;
+ background: #fff;
+ z-index: 99;
+}
+
+.start.active {
+display: block;
+}
+
+.loading::before,
+.loading::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ margin: auto;
+ width: 10px;
+ height: 10px;
+ border-radius: 50%;
+ background: #000;
+ animation: loading 2s linear infinite;
+}
+
+.loading::after {
+ animation-delay: 1s;
+}
+
+@keyframes loading {
+ 0% {
+   width: 0;
+   height: 0;
+   opacity: 1;
+ }
+ 100% {
+  width: 100px;
+  height: 100px;
+   opacity: 0;
+ }
+}
+
 /* topNavBar style */
 .topNavBar {
   position: fixed;
@@ -415,91 +469,32 @@ main .description {
   max-width: 930px;
   margin: 78px auto;
   text-align: center;
+  padding-bottom: 100px;
 }
 
 .florilegium h2 {
   text-align: center;
   margin-bottom: 27px;
 }
- 
-.florilegium nav {
-  display: inline-block;
-  margin: 0 auto 26px;
-}
-
-.florilegium nav ol li {
-  font-size: 14px;
-  float: left;
-  margin-left: 48px;
-  cursor: pointer;
-}
-.florilegium nav ol li:first-child{
-  margin-left: 0;
-}
-
-.florilegium nav .progressBar{
-  margin-top: 16px;
-  height: 5px;
-  background: #fff;
-  border-radius: 5px;
-  
-}
-
-
-.florilegium nav .progressBar .progress { 
-  height: 100%;
-  width: 28px;
-  background: #e8676b;
-  border-radius: 5px;
-  transition: all .5s;
-}
-
-
-.florilegium nav .progressBar .progress.status-2{
-  height: 100%;
-  width: 28px;
-  margin-left: 76px;
-  background: #e8676b;
-  border-radius: 5px;
-}
-
-.florilegium nav .progressBar .progress.status-3{
-  height: 100%;
-  width: 44px;
-  margin-left: 152px;
-  background: #e8676b;
-  border-radius: 5px;
-}
 
 .florilegium .works {
   position: relative;
   box-shadow: 1px 1px 5px 1px rgba(0,0,0,.2); 
-  height: 800px;
+  height: 620px;
 }
 
-.florilegium .works .big{
-  position: absolute;
-  top: 0;
-  left: 3px;
-  box-shadow: 1px 1px 5px 1px rgba(0,0,0,.2); 
-}
-
-.florilegium .works .small-1 {
-  position: absolute;
-  top: 0;
-  left: 631px;
-  box-shadow: 1px 1px 5px 1px rgba(0,0,0,.2); 
-}
-
-.florilegium .works .small-2 {
-  position: absolute;
-  top: 297px;
-  left: 631px;
-  box-shadow: 1px 1px 5px 1px rgba(0,0,0,.2); 
-}
 
 .florilegium .works img {
   vertical-align: top;
+}
+
+.swiper-container {
+  width: 930px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #9a9da1;
 }
 
 /* clearfix */
