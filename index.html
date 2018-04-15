@@ -9,6 +9,7 @@
   <script src="//at.alicdn.com/t/font_595376_gk3pq8kxmdl8r529.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
+  
 </head>
 <body>
   <div id="start" class="start active"><div class="loading"></div></div>
@@ -150,102 +151,11 @@
       </div>
     </div>
   </section>
-  <script>
-    setTimeout(() => {
-      start.classList.remove('active')
-    }, 2000)
-
-    let mark = document.querySelectorAll('[mark]')
-    for(let i=0; i<mark.length; i++) {
-      mark[i].classList.add('offset')
-    }
-    let index = 0
-    setTimeout(() => {
-      closest()
-    }, 2500)
-    window.onscroll = e => {
-      if(window.scrollY >0) {
-        topNavBar.classList.add('sticky')
-      }else {
-        topNavBar.classList.remove('sticky')
-      }
-      closest()
-    }
-
-    let liTags = document.querySelectorAll('.navList>ul>li')
-    for(let i=0; i<liTags.length; i++) {
-      liTags[i].onmouseenter = e => {
-        let li = e.currentTarget
-        li.classList.add('active')
-      }
-      liTags[i].onmouseleave = e => {
-        let li = e.currentTarget
-        li.classList.remove('active')
-      }
-    }
-
-    let aTags = document.querySelectorAll('.navList>ul>li>a')
-    for(i=0; i<aTags.length; i++) {
-      aTags[i].onclick = e => {
-        e.preventDefault()
-        let a = e.currentTarget
-        let href = document.querySelector(a.getAttribute('href'))
-        let current = window.scrollY
-        let top = href.offsetTop - 160
-        let time = Math.abs((top - current)/100*300)
-        if(time > 1000){time = 1000}
-
-        function animate(time) {
-          requestAnimationFrame(animate);
-          TWEEN.update(time);
-        } 
-        requestAnimationFrame(animate);
-
-        let coords = { x: 0, y: current }; // Start at (0, 0)
-        let tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
-        .to({ x: 0, y: top }, time) // Move to (300, 200) in 1 second.
-        .easing(TWEEN.Easing.Quadratic.InOut) // Use an easing function to make the animation smooth.
-        .onUpdate(function() { // Called after tween.js updates 'coords'.
-            // Move 'box' to the position described by 'coords' with a CSS translation.
-            window.scrollTo(0, coords.y);
-        })
-        .start(); // Start the tween immediately.
-      }
-    }
-
-    function closest() {
-      for(let i=0; i<mark.length; i++) {
-        if(Math.abs(mark[i].offsetTop - window.scrollY) <= Math.abs(mark[index].offsetTop - window.scrollY)) {
-          index = i
-        }
-      }
-      mark[index].classList.remove('offset')
-
-      let li = document.querySelector(`a[href="#${mark[index].id}"]`).parentNode
-      let brotherLi = li.parentNode.children
-      for(i=0; i<brotherLi.length; i++) {
-        brotherLi[i].classList.remove('highlight')
-      }
-      li.classList.add('highlight')
-    }
-  </script>
-  <script>
-    var mySwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true,
-
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-      },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
-    })
-  </script>
+  <script src="./js/loading.js"></script>
+  <script src="./js/navMenu.js"></script>
+  <script src="./js/stickyTopBar.js"></script>
+  <script src="./js/swiper.js"></script>
+  <script src="./js/autoSlideUp.js"></script>
+  <script src="./js/smoothlyScroll.js"></script>
 </body>
 </html>
