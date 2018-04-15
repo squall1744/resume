@@ -1,6 +1,7 @@
 
 !function() {
   let view = $('#postMessage')
+
   let model = {
     init: function() {
       let APP_ID = 'o3kd1RCCOB0O7IiHzDBQrSTa-gzGzoHsz';
@@ -70,12 +71,17 @@
 
     postMessage: function() {
         let name = this.$postMessageForm.children(`input[name="name"]`).val()
+        console.log(name)
         let content = this.$postMessageForm.children(`input[name="content"]`).val()
-        model.save(name, content).then((object) => {
-          this.addMessage(object.attributes)
-          this.$postMessageForm.children(`input[name="name"]`).val('')
-          this.$postMessageForm.children(`input[name="content"]`).val('')
-        })
+        if(!name.match(/^[ ]*$/) && !content.match(/^[ ]*$/)) {
+          model.save(name, content).then((object) => {
+            this.addMessage(object.attributes)
+            this.$postMessageForm.children(`input[name="name"]`).val('')
+            this.$postMessageForm.children(`input[name="content"]`).val('')
+          })
+        }else {
+          alert('please input name and content')
+        }
     }
   }
 
