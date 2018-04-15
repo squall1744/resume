@@ -7,9 +7,10 @@
   <link rel="stylesheet" href="./style/style.css">
 
   <script src="//at.alicdn.com/t/font_595376_gk3pq8kxmdl8r529.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
-  
+  <script src="//cdn1.lncld.net/static/js/3.6.5/av-min.js"></script>
 </head>
 <body>
   <div id="start" class="start active"><div class="loading"></div></div>
@@ -151,11 +152,23 @@
       </div>
     </div>
   </section>
+  <section id="postMessage">
+    <h2>留言板</h2>
+    <ul id="messageHistory"></ul>
+    <form id="messageForm" action="POST" >
+      <label for="name">姓名</label>
+      <input type="text" name="name">
+      <label for="content">内容</label>
+      <input type="text" name="content">
+      <input type="submit" name="submit">
+    </form>
+  </section>
   <script src="./js/loading.js"></script>
   <script src="./js/navMenu.js"></script>
   <script src="./js/stickyTopBar.js"></script>
   <script src="./js/swiper.js"></script>
   <script src="./js/autoSlideUp.js"></script>
   <script src="./js/smoothlyScroll.js"></script>
+  <script src="./js/leancloud.js"></script>
 </body>
 </html>

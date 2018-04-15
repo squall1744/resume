@@ -469,7 +469,6 @@ main .description {
   max-width: 930px;
   margin: 78px auto;
   text-align: center;
-  padding-bottom: 100px;
 }
 
 .florilegium h2 {
@@ -496,6 +495,33 @@ main .description {
 .swiper-button-next {
   color: #9a9da1;
 }
+
+#postMessage {
+  max-width: 930px;
+  margin: 78px auto;
+}
+
+#postMessage h2 {
+  text-align: center;
+  margin-bottom: 27px;
+}
+
+#postMessage ul {
+  background: white;
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,.2);
+}
+
+#postMessage #messageHistory li {
+  margin: 0 10px;
+  padding: 10px 0;
+  border-top: 1px solid;
+}
+
+#postMessage #messageHistory li:first-child {
+  border-top: 1px solid transparent;
+}
+
+
 
 /* clearfix */
 .clearfix:after {
