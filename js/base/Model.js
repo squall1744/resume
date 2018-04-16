@@ -10,7 +10,7 @@ window.Model = function(options) {
         appKey: APP_KEY
       })
     },
-    fetch: function(resourceName) {
+    fetch: function() {
       let query = new AV.Query(resourceName)
       return query.find()      
     },

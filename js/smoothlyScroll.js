@@ -1,14 +1,22 @@
 !function() {
   let view = document.querySelector('.navList')
 
-  let controller = {
-    view: null,
-    aTags: null,
-    init: function(view) {
-      this.view = view
+  let controller = Controller({
+    init: function() {
       this.aTags = this.view.querySelectorAll('ul>li>a')
-      this.initAnimation()
-      this.bindEvent()
+      this.initAnimation()     
+    },
+    bindEvent: function() {
+      let view = this.view
+
+      for(i=0; i<this.aTags.length; i++) {
+        this.aTags[i].onclick = e => {
+          e.preventDefault()
+          let a = e.currentTarget
+          let href = document.querySelector(a.getAttribute('href'))
+          this.scrollToEvelment(href)
+        }
+      }
     },
     initAnimation: function() {
       function animate(time) {
@@ -32,20 +40,8 @@
           window.scrollTo(0, coords.y);
       })
       .start(); // Start the tween immediately.
-    },
-    bindEvent: function() {
-      let view = this.view
-
-      for(i=0; i<this.aTags.length; i++) {
-        this.aTags[i].onclick = e => {
-          e.preventDefault()
-          let a = e.currentTarget
-          let href = document.querySelector(a.getAttribute('href'))
-          this.scrollToEvelment(href)
-        }
-      }
-    }
-  }
+    },      
+  })
 
   controller.init(view)
 }()

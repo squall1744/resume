@@ -1,11 +1,8 @@
 !function() {
   let view = document.querySelector('#topNavBar')
 
-  let controller = {
-    view: view,
-    init: function(view) {
-      this.view = view
-      this.bindEvent()
+  let controller = Controller({
+    init: function(view){
     },
     bindEvent: function() {
       let view = this.view
@@ -23,7 +20,7 @@
     deactive: function() {
       this.view.classList.remove('sticky')
     }
-  }
+  })
 
   controller.init(view)
 }()

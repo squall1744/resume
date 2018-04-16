@@ -2,11 +2,9 @@
 !function() {
   let view = document.querySelector('.navList')
 
-  let contorller = {
-    view: null,
-    init: function(view) {
-      this.view = view
-      this.bindEvent()
+  let controller = Controller({
+    init: function() {
+
     },
     bindEvent: function() {
       let view = this.view
@@ -28,7 +26,7 @@
     deactive: function(li) {
       li.classList.remove('active')
     }
-  }
+  })
 
-  contorller.init(view)
+  controller.init(view)
 }()
